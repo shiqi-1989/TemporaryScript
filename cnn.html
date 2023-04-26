@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  import {toJsonString} from "curlconverter";
+const text = 'curl \'https://dev-tiku.htexam.com/ms-api/v1/commentCommodity/save\' \\\n' +
+        '  -H \'Accept: application/json, text/plain, */*\' \\\n' +
+        '  -H \'Accept-Language: zh-CN,zh;q=0.9\' \\\n' +
+        '  -H \'Cache-Control: no-cache\' \\\n' +
+        '  -H \'Connection: keep-alive\' \\\n' +
+        '  -H \'Content-Type: application/json;charset=UTF-8\' \\\n' +
+        '  -H \'Cookie: JSESSIONID=SuQAxa4xUxtnuAKBVO9o6eZbNQpO-60qWEKYyltE; _const_huatu_jsession_id_=1677048240256.131033aa-dec9-4690-a587-c1d26a31c1dc.dev-tiku.htexam.com/emiankuEnd\' \\\n' +
+        '  -H \'Origin: https://dev-tiku.htexam.com\' \\\n' +
+        '  -H \'Pragma: no-cache\' \\\n' +
+        '  -H \'Referer: https://dev-tiku.htexam.com/emiankuEnd/\' \\\n' +
+        '  -H \'Sec-Fetch-Dest: empty\' \\\n' +
+        '  -H \'Sec-Fetch-Mode: cors\' \\\n' +
+        '  -H \'Sec-Fetch-Site: same-origin\' \\\n' +
+        '  -H \'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36\' \\\n' +
+        '  -H \'sec-ch-ua: "Chromium";v="110", "Not A(Brand";v="24", "Google Chrome";v="110"\' \\\n' +
+        '  -H \'sec-ch-ua-mobile: ?0\' \\\n' +
+        '  -H \'sec-ch-ua-platform: "macOS"\' \\\n' +
+        '  --data-raw \'{"commodityName":"测试商品","isGift":false,"originalPrice":99,"enrolmentTimes":123,"validityTerm":5,"validityTermFix":"","exhaustionTime":1677513600000,"examType":["NATION"],"headUrl":"https://tiku.huatu.com/cdn/images/ic/20230222/b7e0364a065340078f16e95b27e0a7ef.png","productDetails":"<p>12321321</p>","questionIds":"11111","currentPrice":null,"id":163}\' \\\n' +
+        '  --compressed'
+  console.log(toJsonString(text))
+</script>
+</body>
+</html>

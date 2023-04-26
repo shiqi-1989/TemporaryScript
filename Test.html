@@ -1,0 +1,482 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>HTTP Request Translator</title>
+    <meta name="description" content="">
+    <meta name="author" content="Ryan Govostes">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <!-- Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-115469950-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-115469950-1');
+    </script>
+</head>
+
+<body>
+<div class="top">
+    <div class="github">
+        <a href="https://www.github.com/rgov/http-translator">
+            <!-- GitHub icon SVG from Simple Icons https://simpleicons.org -->
+            <svg class="icon" aria-label="GitHub icon" role="img" viewBox="0 0 24 24"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+            </svg>
+        </a>
+    </div>
+
+    <h1>HTTP Request Translator</h1>
+    <h3>brought to you by <a href="https://ryan.govost.es/">Ryan Govostes</a></h3>
+</div>
+
+<div id="root">
+    <div class="parent">
+        <div class="child">
+            <div class="nav">
+                <ul class="nav-tabs">
+                    <li class="nav-item"><span class="nav-link active">Input</span></li>
+                </ul>
+                <ul class="nav-tabs controls">
+                    <li class="nav-item">
+                        <button>Load Example</button>
+                    </li>
+                    <li class="nav-item"><select>
+                        <option value="curl">curl</option>
+                        <option value="HTTP">HTTP</option>
+                        <option value="JSON">JSON</option>
+                    </select></li>
+                </ul>
+            </div>
+            <div>
+                <div class="react-codemirror2">
+                    <div class="CodeMirror cm-s-default CodeMirror-wrap">
+                        <div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 154px; left: 264.078px;">
+                            <textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0"
+                                      style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea>
+                        </div>
+                        <div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true">
+                            <div style="min-width: 1px; height: 0px;"></div>
+                        </div>
+                        <div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true">
+                            <div style="height: 100%; min-height: 1px; width: 0px;"></div>
+                        </div>
+                        <div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div>
+                        <div class="CodeMirror-gutter-filler" cm-not-content="true"></div>
+                        <div class="CodeMirror-scroll" tabindex="-1">
+                            <div class="CodeMirror-sizer"
+                                 style="margin-left: 30px; margin-bottom: -15px; border-right-width: 15px; min-height: 173px; padding-right: 0px; padding-bottom: 0px;">
+                                <div style="position: relative; top: 0px;">
+                                    <div class="CodeMirror-lines" role="presentation">
+                                        <div role="presentation" style="position: relative; outline: none;">
+                                            <div class="CodeMirror-measure">
+                                                <pre class="CodeMirror-line-like"><span>xxxxxxxxxx</span></pre>
+                                            </div>
+                                            <div class="CodeMirror-measure"></div>
+                                            <div style="position: relative; z-index: 1;"></div>
+                                            <div class="CodeMirror-cursors">
+                                                <div class="CodeMirror-cursor"
+                                                     style="left: 234.078px; top: 150px; height: 15px;">&nbsp;
+                                                </div>
+                                            </div>
+                                            <div class="CodeMirror-code" role="presentation" style="">
+                                                <div style="position: relative;">
+                                                    <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                        <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                             style="left: 0px; width: 21px;">1
+                                                        </div>
+                                                    </div>
+                                                    <pre class=" CodeMirror-line " role="presentation"
+                                                         style="text-indent: -15.6031px; padding-left: 15.6031px;"><span
+                                                            role="presentation" style="padding-right: 0.1px;"><span
+                                                            class="cm-builtin">curl</span> <span class="cm-string">'http://example.com/api/v2/defragment'</span> \</span></pre>
+                                                </div>
+                                                <div style="position: relative;">
+                                                    <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                        <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                             style="left: 0px; width: 21px;">2
+                                                        </div>
+                                                    </div>
+                                                    <pre class=" CodeMirror-line " role="presentation"
+                                                         style="text-indent: -31.2063px; padding-left: 31.2063px;"><span
+                                                            role="presentation"
+                                                            style="padding-right: 0.1px;"> &nbsp;<span
+                                                            class="cm-attribute">-H</span> <span class="cm-string">'Host: example.com'</span> \</span></pre>
+                                                </div>
+                                                <div style="position: relative;">
+                                                    <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                        <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                             style="left: 0px; width: 21px;">3
+                                                        </div>
+                                                    </div>
+                                                    <pre class=" CodeMirror-line " role="presentation"
+                                                         style="text-indent: -31.2063px; padding-left: 31.2063px;"><span
+                                                            role="presentation"
+                                                            style="padding-right: 0.1px;"> &nbsp;<span
+                                                            class="cm-attribute">-H</span> <span class="cm-string">'Content-Length: 19'</span> \</span></pre>
+                                                </div>
+                                                <div style="position: relative;">
+                                                    <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                        <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                             style="left: 0px; width: 21px;">4
+                                                        </div>
+                                                    </div>
+                                                    <pre class=" CodeMirror-line " role="presentation"
+                                                         style="text-indent: -31.2063px; padding-left: 31.2063px;"><span
+                                                            role="presentation"
+                                                            style="padding-right: 0.1px;"> &nbsp;<span
+                                                            class="cm-attribute">-H</span> <span class="cm-string">'Content-Type: application/x-www-form-urlencoded; charset=UTF-8'</span> \</span></pre>
+                                                </div>
+                                                <div style="position: relative;">
+                                                    <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                        <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                             style="left: 0px; width: 21px;">5
+                                                        </div>
+                                                    </div>
+                                                    <pre class=" CodeMirror-line " role="presentation"
+                                                         style="text-indent: -31.2063px; padding-left: 31.2063px;"><span
+                                                            role="presentation"
+                                                            style="padding-right: 0.1px;"> &nbsp;<span
+                                                            class="cm-attribute">-H</span> <span class="cm-string">'Cookie: session=291419e390a3b67a3946e0854cc9e33e'</span> \</span></pre>
+                                                </div>
+                                                <div style="position: relative;">
+                                                    <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                        <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                             style="left: 0px; width: 21px;">6
+                                                        </div>
+                                                    </div>
+                                                    <pre class=" CodeMirror-line " role="presentation"
+                                                         style="text-indent: -31.2063px; padding-left: 31.2063px;"><span
+                                                            role="presentation"
+                                                            style="padding-right: 0.1px;"> &nbsp;<span
+                                                            class="cm-attribute">-H</span> <span class="cm-string">'Referer: http://example.com/'</span> \</span></pre>
+                                                </div>
+                                                <div style="position: relative;">
+                                                    <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                        <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                             style="left: 0px; width: 21px;">7
+                                                        </div>
+                                                    </div>
+                                                    <pre class=" CodeMirror-line " role="presentation"
+                                                         style="text-indent: -31.2063px; padding-left: 31.2063px;"><span
+                                                            role="presentation"
+                                                            style="padding-right: 0.1px;"> &nbsp;<span
+                                                            class="cm-attribute">-H</span> <span class="cm-string">'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1.1 Safari/605.1.15'</span> \</span></pre>
+                                                </div>
+                                                <div style="position: relative;">
+                                                    <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                        <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                             style="left: 0px; width: 21px;">8
+                                                        </div>
+                                                    </div>
+                                                    <pre class=" CodeMirror-line " role="presentation"
+                                                         style="text-indent: -31.2063px; padding-left: 31.2063px;"><span
+                                                            role="presentation"
+                                                            style="padding-right: 0.1px;"> &nbsp;<span
+                                                            class="cm-attribute">-H</span> <span class="cm-string">'X-Requested-With: XMLHttpRequest'</span> \</span></pre>
+                                                </div>
+                                                <div style="position: relative;">
+                                                    <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                        <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                             style="left: 0px; width: 21px;">9
+                                                        </div>
+                                                    </div>
+                                                    <pre class=" CodeMirror-line " role="presentation"
+                                                         style="text-indent: -31.2063px; padding-left: 31.2063px;"><span
+                                                            role="presentation"
+                                                            style="padding-right: 0.1px;"> &nbsp;<span
+                                                            class="cm-attribute">--data</span> <span class="cm-string">'drive=C&amp;confirm=yes'</span></span></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="position: absolute; height: 15px; width: 1px; border-bottom: 0px solid transparent; top: 173px;"></div>
+                            <div class="CodeMirror-gutters" style="height: 188px; left: 0px;">
+                                <div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="child">
+            <div class="nav">
+                <ul class="nav-tabs">
+                    <li class="nav-item"><a class="nav-link active" href="#">Output</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Log</a></li>
+                </ul>
+                <ul class="nav-tabs controls">
+                    <li class="nav-item"><select>
+                        <option value="JavaScript (XMLHttpRequest)">JavaScript (XMLHttpRequest)</option>
+                        <option value="Python Requests">Python Requests</option>
+                        <option value="JSON">JSON</option>
+                    </select></li>
+                </ul>
+            </div>
+            <div>
+                <div class="hide">
+                    <div class="logger">
+                        <ul>
+                            <li class="section">Frontend: curl</li>
+                            <li class="log">Ignoring trailer after Content-Type: ; charset=UTF-8</li>
+                            <li class="section">Backend: Python Requests</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="react-codemirror2">
+                        <div class="CodeMirror cm-s-default CodeMirror-wrap">
+                            <div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 259px; left: 37.8125px;">
+                                <textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0"
+                                          style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea>
+                            </div>
+                            <div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true">
+                                <div style="min-width: 1px; height: 0px;"></div>
+                            </div>
+                            <div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true">
+                                <div style="height: 100%; min-height: 1px; width: 0px;"></div>
+                            </div>
+                            <div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div>
+                            <div class="CodeMirror-gutter-filler" cm-not-content="true"></div>
+                            <div class="CodeMirror-scroll" tabindex="-1">
+                                <div class="CodeMirror-sizer"
+                                     style="margin-left: 30px; margin-bottom: -15px; border-right-width: 15px; min-height: 278px; padding-right: 0px; padding-bottom: 0px;">
+                                    <div style="position: relative; top: 0px;">
+                                        <div class="CodeMirror-lines" role="presentation">
+                                            <div role="presentation" style="position: relative; outline: none;">
+                                                <div class="CodeMirror-measure"></div>
+                                                <div class="CodeMirror-measure"></div>
+                                                <div style="position: relative; z-index: 1;"></div>
+                                                <div class="CodeMirror-cursors">
+                                                    <div class="CodeMirror-cursor"
+                                                         style="left: 7.8125px; top: 255px; height: 15px;">&nbsp;
+                                                    </div>
+                                                </div>
+                                                <div class="CodeMirror-code" role="presentation" style="">
+                                                    <div style="position: relative;">
+                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                 style="left: 0px; width: 21px;">1
+                                                            </div>
+                                                        </div>
+                                                        <pre class=" CodeMirror-line " role="presentation"
+                                                             style="text-indent: -15.6031px; padding-left: 15.6031px;"><span
+                                                                role="presentation" style="padding-right: 0.1px;"><span
+                                                                class="cm-keyword">import</span> <span
+                                                                class="cm-variable">requests</span></span></pre>
+                                                    </div>
+                                                    <div style="position: relative;">
+                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                 style="left: 0px; width: 21px;">2
+                                                            </div>
+                                                        </div>
+                                                        <pre class=" CodeMirror-line " role="presentation"
+                                                             style="text-indent: -15.6031px; padding-left: 15.6031px;"><span
+                                                                role="presentation" style="padding-right: 0.1px;"><span
+                                                                cm-text="">&ZeroWidthSpace;</span></span></pre>
+                                                    </div>
+                                                    <div style="position: relative;">
+                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                 style="left: 0px; width: 21px;">3
+                                                            </div>
+                                                        </div>
+                                                        <pre class=" CodeMirror-line " role="presentation"
+                                                             style="text-indent: -15.6031px; padding-left: 15.6031px;"><span
+                                                                role="presentation" style="padding-right: 0.1px;"><span
+                                                                class="cm-variable">requests</span>.<span
+                                                                class="cm-property">post</span>(</span></pre>
+                                                    </div>
+                                                    <div style="position: relative;">
+                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                 style="left: 0px; width: 21px;">4
+                                                            </div>
+                                                        </div>
+                                                        <pre class=" CodeMirror-line " role="presentation"
+                                                             style="text-indent: -31.2063px; padding-left: 31.2063px;"><span
+                                                                role="presentation" style="padding-right: 0.1px;"> &nbsp;<span
+                                                                class="cm-string">'http://example.com/api/v2/defragment'</span>,</span></pre>
+                                                    </div>
+                                                    <div style="position: relative;">
+                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                 style="left: 0px; width: 21px;">5
+                                                            </div>
+                                                        </div>
+                                                        <pre class=" CodeMirror-line " role="presentation"
+                                                             style="text-indent: -31.2063px; padding-left: 31.2063px;"><span
+                                                                role="presentation" style="padding-right: 0.1px;"> &nbsp;<span
+                                                                class="cm-variable">headers</span><span
+                                                                class="cm-operator">=</span>{</span></pre>
+                                                    </div>
+                                                    <div style="position: relative;">
+                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                 style="left: 0px; width: 21px;">6
+                                                            </div>
+                                                        </div>
+                                                        <pre class=" CodeMirror-line " role="presentation"
+                                                             style="text-indent: -46.8094px; padding-left: 46.8094px;"><span
+                                                                role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span
+                                                                class="cm-string">'Content-Type'</span>: <span
+                                                                class="cm-string">'application/x-www-form-urlencoded; charset=UTF-8'</span>,</span></pre>
+                                                    </div>
+                                                    <div style="position: relative;">
+                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                 style="left: 0px; width: 21px;">7
+                                                            </div>
+                                                        </div>
+                                                        <pre class=" CodeMirror-line " role="presentation"
+                                                             style="text-indent: -46.8094px; padding-left: 46.8094px;"><span
+                                                                role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span
+                                                                class="cm-string">'Cookie'</span>: <span
+                                                                class="cm-string">'session=291419e390a3b67a3946e0854cc9e33e'</span>,</span></pre>
+                                                    </div>
+                                                    <div style="position: relative;">
+                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                 style="left: 0px; width: 21px;">8
+                                                            </div>
+                                                        </div>
+                                                        <pre class=" CodeMirror-line " role="presentation"
+                                                             style="text-indent: -46.8094px; padding-left: 46.8094px;"><span
+                                                                role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span
+                                                                class="cm-string">'Referer'</span>: <span
+                                                                class="cm-string">'http://example.com/'</span>,</span></pre>
+                                                    </div>
+                                                    <div style="position: relative;">
+                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                 style="left: 0px; width: 21px;">9
+                                                            </div>
+                                                        </div>
+                                                        <pre class=" CodeMirror-line " role="presentation"
+                                                             style="text-indent: -46.8094px; padding-left: 46.8094px;"><span
+                                                                role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span
+                                                                class="cm-string">'User-Agent'</span>: <span
+                                                                class="cm-string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1.1 Safari/605.1.15'</span>,</span></pre>
+                                                    </div>
+                                                    <div style="position: relative;">
+                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                 style="left: 0px; width: 21px;">10
+                                                            </div>
+                                                        </div>
+                                                        <pre class=" CodeMirror-line " role="presentation"
+                                                             style="text-indent: -46.8094px; padding-left: 46.8094px;"><span
+                                                                role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span
+                                                                class="cm-string">'X-Requested-With'</span>: <span
+                                                                class="cm-string">'XMLHttpRequest'</span>,</span></pre>
+                                                    </div>
+                                                    <div style="position: relative;">
+                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                 style="left: 0px; width: 21px;">11
+                                                            </div>
+                                                        </div>
+                                                        <pre class=" CodeMirror-line " role="presentation"
+                                                             style="text-indent: -31.2063px; padding-left: 31.2063px;"><span
+                                                                role="presentation"
+                                                                style="padding-right: 0.1px;">  },</span></pre>
+                                                    </div>
+                                                    <div style="position: relative;">
+                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                 style="left: 0px; width: 21px;">12
+                                                            </div>
+                                                        </div>
+                                                        <pre class=" CodeMirror-line " role="presentation"
+                                                             style="text-indent: -31.2063px; padding-left: 31.2063px;"><span
+                                                                role="presentation" style="padding-right: 0.1px;"> &nbsp;<span
+                                                                class="cm-variable">data</span><span
+                                                                class="cm-operator">=</span>{</span></pre>
+                                                    </div>
+                                                    <div style="position: relative;">
+                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                 style="left: 0px; width: 21px;">13
+                                                            </div>
+                                                        </div>
+                                                        <pre class=" CodeMirror-line " role="presentation"
+                                                             style="text-indent: -46.8094px; padding-left: 46.8094px;"><span
+                                                                role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span
+                                                                class="cm-string">'drive'</span>: <span
+                                                                class="cm-string">'C'</span>,</span></pre>
+                                                    </div>
+                                                    <div style="position: relative;">
+                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                 style="left: 0px; width: 21px;">14
+                                                            </div>
+                                                        </div>
+                                                        <pre class=" CodeMirror-line " role="presentation"
+                                                             style="text-indent: -46.8094px; padding-left: 46.8094px;"><span
+                                                                role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span
+                                                                class="cm-string">'confirm'</span>: <span
+                                                                class="cm-string">'yes'</span>,</span></pre>
+                                                    </div>
+                                                    <div style="position: relative;">
+                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                 style="left: 0px; width: 21px;">15
+                                                            </div>
+                                                        </div>
+                                                        <pre class=" CodeMirror-line " role="presentation"
+                                                             style="text-indent: -31.2063px; padding-left: 31.2063px;"><span
+                                                                role="presentation"
+                                                                style="padding-right: 0.1px;">  },</span></pre>
+                                                    </div>
+                                                    <div style="position: relative;">
+                                                        <div class="CodeMirror-gutter-wrapper" style="left: -30px;">
+                                                            <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                 style="left: 0px; width: 21px;">16
+                                                            </div>
+                                                        </div>
+                                                        <pre class=" CodeMirror-line " role="presentation"
+                                                             style="text-indent: -15.6031px; padding-left: 15.6031px;"><span
+                                                                role="presentation"
+                                                                style="padding-right: 0.1px;">)</span></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="position: absolute; height: 15px; width: 1px; border-bottom: 0px solid transparent; top: 278px;"></div>
+                                <div class="CodeMirror-gutters" style="height: 293px; left: 0px;">
+                                    <div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="main.bundle.js"></script>
+
+
+<iframe src="chrome-extension://kbbdabhdfibnancpjfhlkhafgdilcnji/./html/sources.html" allow="camera"
+        style="display: none;"></iframe>
+<iframe src="chrome-extension://kbbdabhdfibnancpjfhlkhafgdilcnji/./html/audiosources.html" allow="microphone"
+        style="display: none;"></iframe>
+</body>
+</html>
